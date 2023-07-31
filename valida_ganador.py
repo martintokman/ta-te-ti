@@ -47,7 +47,16 @@ def valida_ganador(lista_jugadas):
     elif lista_jugadas[2] == "O" and lista_jugadas[4] == "O" and lista_jugadas[6] == "O":
         ganador = "compu"
     
+    
     else:
-        ganador = "empate"
+        #Empate
+        contador = 0
+        for elemento in lista_jugadas:
+            if not isinstance(elemento, int):
+                contador += 1
+        if contador == 9:
+            ganador = "empate"
+        else:
+            ganador = "nadie"
 
     return ganador
