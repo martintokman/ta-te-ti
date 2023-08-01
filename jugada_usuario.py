@@ -16,11 +16,4 @@ def jugada_usuario(lista_jugadas):
             print("Sólo se permiten números, vuelve a intentar")
 
     lista_jugadas[jugada_usuario] = "X"
-    
-    for i in range(2) : print("")
-    print("**************************")
-    print("**************************")
-    print("")
-
-    print(f"El usuario jugó: {jugada_usuario}")
     return lista_jugadas
