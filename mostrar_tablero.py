@@ -14,7 +14,8 @@ def mostrar_tablero(lista_jugadas):
     elif lista_jugadas[0] == "O":
         print(colored(lista_jugadas[0], "yellow"), end=" ")
     else:
-        print(f"{lista_jugadas[0]}", end=" ")
+        print(colored(lista_jugadas[0], "dark_grey"), end=" ")
+
     
     
     print("| ", end="")
@@ -23,7 +24,7 @@ def mostrar_tablero(lista_jugadas):
     elif lista_jugadas[1] == "O":
         print(colored(lista_jugadas[1], "yellow"), end=" ")
     else:
-        print(f"{lista_jugadas[1]}", end=" ")
+        print(colored(lista_jugadas[1], "dark_grey"), end=" ")
 
     print("| ", end="")
     if lista_jugadas[2] == "X": 
@@ -31,7 +32,8 @@ def mostrar_tablero(lista_jugadas):
     elif lista_jugadas[2] == "O":
         print(colored(lista_jugadas[2], "yellow"), end=" |\n")
     else:
-        print(f"{lista_jugadas[2]}", end=" |\n")
+        print(colored(lista_jugadas[2], "dark_grey"), end=" |\n")
+        
 
     
     print ("-------------")
@@ -44,7 +46,7 @@ def mostrar_tablero(lista_jugadas):
     elif lista_jugadas[3] == "O":
         print(colored(lista_jugadas[3], "yellow"), end=" ")
     else:
-        print(f"{lista_jugadas[3]}", end=" ")
+        print(colored(lista_jugadas[3], "dark_grey"), end=" ")
     
     
     print("| ", end="")
@@ -53,7 +55,7 @@ def mostrar_tablero(lista_jugadas):
     elif lista_jugadas[4] == "O":
         print(colored(lista_jugadas[4], "yellow"), end=" ")
     else:
-        print(f"{lista_jugadas[4]}", end=" ")
+        print(colored(lista_jugadas[4], "dark_grey"), end=" ")
 
     print("| ", end="")
     if lista_jugadas[5] == "X": 
@@ -61,7 +63,7 @@ def mostrar_tablero(lista_jugadas):
     elif lista_jugadas[5] == "O":
         print(colored(lista_jugadas[5], "yellow"), end=" |\n")
     else:
-        print(f"{lista_jugadas[5]}", end=" |\n")
+        print(colored(lista_jugadas[5], "dark_grey"), end=" |\n")
 
     
     print ("-------------")
@@ -74,7 +76,7 @@ def mostrar_tablero(lista_jugadas):
     elif lista_jugadas[6] == "O":
         print(colored(lista_jugadas[6], "yellow"), end=" ")
     else:
-        print(f"{lista_jugadas[6]}", end=" ")
+        print(colored(lista_jugadas[6], "dark_grey"), end=" ")
     
     
     print("| ", end="")
@@ -83,7 +85,7 @@ def mostrar_tablero(lista_jugadas):
     elif lista_jugadas[7] == "O":
         print(colored(lista_jugadas[7], "yellow"), end=" ")
     else:
-        print(f"{lista_jugadas[7]}", end=" ")
+        print(colored(lista_jugadas[7], "dark_grey"), end=" ")
 
     print("| ", end="")
     if lista_jugadas[8] == "X": 
@@ -91,7 +93,7 @@ def mostrar_tablero(lista_jugadas):
     elif lista_jugadas[8] == "O":
         print(colored(lista_jugadas[8], "yellow"), end=" |\n")
     else:
-        print(f"{lista_jugadas[8]}", end=" |\n")
+        print(colored(lista_jugadas[8], "dark_grey"), end=" |\n")
 
     
     print ("-------------")
