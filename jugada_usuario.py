@@ -1,6 +1,7 @@
 def jugada_usuario(lista_jugadas):
     while True:
         try:
+            print("")
             jugada_usuario = int(input("Ingresa tu jugada (1-9):"))
             jugada_usuario -= 1
             if (jugada_usuario + 1) < 1 or (jugada_usuario + 1) > 9:
@@ -15,5 +16,11 @@ def jugada_usuario(lista_jugadas):
             print("Sólo se permiten números, vuelve a intentar")
 
     lista_jugadas[jugada_usuario] = "X"
+    
+    for i in range(2) : print("")
+    print("**************************")
+    print("**************************")
+    print("")
+
     print(f"El usuario jugó: {jugada_usuario}")
     return lista_jugadas

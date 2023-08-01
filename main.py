@@ -4,6 +4,8 @@ from valida_ganador import valida_ganador
 from jugada_compu import jugada_compu
 import sys
 
+nivel = 2
+
 while True: #abro bucle infinito (reinicio)
 
     lista_jugadas = [1,2,3,4,5,6,7,8,9]
@@ -26,7 +28,7 @@ while True: #abro bucle infinito (reinicio)
         
 
         #jugada compu
-        jugada_compu(lista_jugadas)
+        jugada_compu(lista_jugadas, nivel)
 
         
 
