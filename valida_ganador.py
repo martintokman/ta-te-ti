@@ -1,4 +1,14 @@
 def valida_ganador(lista_jugadas):
+    """
+    Recibe la lista de jugadas para validar si hay un ganador, es empate o nadie ganó y el juego sigue su curso.
+
+    Args:
+        lista_jugadas (list): Lista de jugadas y celdas disponibles para jugar.
+
+    Returns:
+        list: Lista de jugadas y celdas disponibles para jugar.
+    """
+
     #Condiciones para que gane el usuario
     #filas
 

@@ -1,6 +1,21 @@
 import random
 
 def jugada_compu(lista_jugadas, nivel):
+    """
+    Genera la jugada de la computadora dependiendo del nivel de juego configurado 
+    en main.py.
+    El nivel 1 no hace validaciones.
+    El nivel 2 chequea la jugada del usuario y actúa en concecuencia para impedir 
+    que se complete una línea.
+    
+
+    Args:
+        lista_jugadas (list): Lista de jugadas y celdas disponibles para jugar.
+        nivel (int): Nivel del juego. 
+
+    Returns:
+        lista_jugadas (list): Lista de jugadas actualizada con la jugada del usuario.
+    """
     
     if nivel == 1: 
         while True:

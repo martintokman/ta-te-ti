@@ -1,4 +1,15 @@
 def jugada_usuario(lista_jugadas):
+    """
+    Solicita al usuario que ingrese su jugada y chequea si la entrada es válida.
+    Si la entrada es válida, guarda la jugada en la lista de jugadas,
+    si es inválida solicita una nueva entrada.
+
+    Args:
+        lista_jugadas (list): Lista de jugadas y celdas disponibles para jugar.
+
+    Returns:
+        lista_jugadas (list): Lista de jugadas actualizada con la jugada del usuario.
+    """
     while True:
         try:
             print("")

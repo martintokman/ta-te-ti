@@ -2,6 +2,14 @@ from termcolor import colored
 
 
 def mostrar_tablero(lista_jugadas):
+    """
+    Imprime en consola el tablero con las jugadas realizadas y las celdas disponibles para jugar.
+    Las jugadas del usuario se muestran en color rojo.
+    Las jugadas de la compu se muestran en color amarillo.
+
+    Args:
+        lista_jugadas (list): Lista de jugadas y celdas disponibles para jugar.
+    """
     
     for i in range(2): print("")
     print ("-------------")
