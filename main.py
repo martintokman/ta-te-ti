@@ -3,7 +3,7 @@ from jugada_usuario import jugada_usuario
 from valida_ganador import valida_ganador
 from jugada_compu import jugada_compu
 import sys, os
-from colorama import Fore
+
 
 
 nivel = 2
