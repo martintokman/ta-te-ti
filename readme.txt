@@ -1,16 +1,17 @@
-Juego ta-te-ti
 
-1) Muestra el tablero numerado del 1 al 9 
-2) Pedir jugada al usuario
-3) Mostrar el tablero con la jugada del usuario y los libres quedan numerados
-4) Muestro el tablero con la jugada de la compu y los libres quedan numerados
-5) Chequeo si se terminó el juego
-6) Si no se terminó vuelvo al ciclo de jugar usuario y compu
-7) Si se terminó muestro resultados y pregunto si quiere volver a jugar
-8) Si quiere volver a jugar reinicia el juego, si no, salir
+Tic-Tac-Toe Game
+
+1) Display the numbered game board from 1 to 9.
+2) Ask the user for their move.
+3) Display the game board with the user's move, and the available spots are renumbered.
+4) Show the game board with the computer's move, and the available spots are renumbered.
+5) Check if the game is over.
+6) If the game is not over, return to the cycle of user and computer moves.
+7) If the game is over, display the results and ask if you want to play again.
+8) If you want to play again, restart the game; if not, exit.
 
 
-Tablero
+Board
 -------------
 | 0 | 1 | 2 |
 -------------
@@ -19,56 +20,53 @@ Tablero
 | 6 | 7 | 8 |
 -------------
 
-Condiciones para que gane el usuario
 
-Filas 
-jugadas[0] == "X" and jugadas[1] == "X" and jugadas[2] == "X"
-jugadas[3] == "X" and jugadas[4] == "X" and jugadas[5] == "X"
-jugadas[6] == "X" and jugadas[7] == "X" and jugadas[8] == "X"
+Conditions for the user to win:
 
-Columnas 
-jugadas[0] == "X" and jugadas[3] == "X" and jugadas[6] == "X"
-jugadas[1] == "X" and jugadas[4] == "X" and jugadas[7] == "X"
-jugadas[2] == "X" and jugadas[5] == "X" and jugadas[8] == "X"
+Rows
+moves[0] == "X" and moves[1] == "X" and moves[2] == "X"
+moves[3] == "X" and moves[4] == "X" and moves[5] == "X"
+moves[6] == "X" and moves[7] == "X" and moves[8] == "X"
 
-Diagonales
-jugadas[0] == "X" and jugadas[4] == "X" and jugadas[8] == "X"
-jugadas[2] == "X" and jugadas[4] == "X" and jugadas[6] == "X"
+Columns
+moves[0] == "X" and moves[3] == "X" and moves[6] == "X"
+moves[1] == "X" and moves[4] == "X" and moves[7] == "X"
+moves[2] == "X" and moves[5] == "X" and moves[8] == "X"
 
+Diagonals
+moves[0] == "X" and moves[4] == "X" and moves[8] == "X"
+moves[2] == "X" and moves[4] == "X" and moves[6] == "X"
 
-Condiciones para que gane la compu
+Conditions for the computer to win:
 
-Filas 
-jugadas[0] == "O" and jugadas[1] == "O" and jugadas[2] == "O"
-jugadas[3] == "O" and jugadas[4] == "O" and jugadas[5] == "O"
-jugadas[6] == "O" and jugadas[7] == "O" and jugadas[8] == "O"
+Rows
+moves[0] == "O" and moves[1] == "O" and moves[2] == "O"
+moves[3] == "O" and moves[4] == "O" and moves[5] == "O"
+moves[6] == "O" and moves[7] == "O" and moves[8] == "O"
 
-Columnas 
-jugadas[0] == "O" and jugadas[3] == "O" and jugadas[6] == "O"
-jugadas[1] == "O" and jugadas[4] == "O" and jugadas[7] == "O"
-jugadas[2] == "O" and jugadas[5] == "O" and jugadas[8] == "O"
+Columns
+moves[0] == "O" and moves[3] == "O" and moves[6] == "O"
+moves[1] == "O" and moves[4] == "O" and moves[7] == "O"
+moves[2] == "O" and moves[5] == "O" and moves[8] == "O"
 
-Diagonales
-jugadas[0] == "O" and jugadas[4] == "O" and jugadas[8] == "O"
-jugadas[2] == "O" and jugadas[4] == "O" and jugadas[6] == "O"
+Diagonals
+moves[0] == "O" and moves[4] == "O" and moves[8] == "O"
+moves[2] == "O" and moves[4] == "O" and moves[6] == "O"
 
+Difficulty levels:
+Level 1 (Easy): The computer randomly selects an empty cell without checking the user's moves.
 
-Niveles de dificultad:
-Nivel 1 (Facil): La compu no revisa las jugadas del usuario, solamente elige un valor al azar para completar
-una celda vacía.
+Level 2 (Intermediate): The computer checks if the user is about to complete a line when they already have 2 "X" and only need one more cell to win. If it detects this situation, it plays in the cell the user needs to complete the line before the user does.
 
-Nivel 2 (Intermedio): La compu revisa si el usuario está por completar una línea cuando ya tiene 2 "X" y solo le falta una 
-celda para ganar. Si detecta esta situación juega en la celda que le falta al usuario antes de completar la línea.
+Combinations to watch to mitigate the situation:
 
-Combinaciones a revisar para mitigar la situación:
+---------------------------------------------------------------------------------------------------------
+--------------------------------------------------- Rows ------------------------------------------------
 
----------------------------------------------------   Filas   -------------------------------------------
- 
+moves[1] == "X" and moves[2] == "X" -> The computer plays 0
+moves[0] == "X" and moves[2] == "X" -> The computer plays 1
+moves[0] == "X" and moves[1] == "X" -> The computer plays 2
 
-jugadas[1] == "X" and jugadas[2] == "X" -> La compu juega 0                    
-jugadas[0] == "X" and jugadas[2] == "X" -> La compu juega 1                   
-jugadas[0] == "X" and jugadas[1] == "X" -> La compu juega 2                   
-                                                                                                            
 -------------   -------------   -------------                           
 |   | 1 | 2 |   | 0 |   | 2 |   | 0 | 1 |   |                          
 -------------   -------------   -------------                          
@@ -78,11 +76,9 @@ jugadas[0] == "X" and jugadas[1] == "X" -> La compu juega 2
 -------------   -------------   -------------                          
  
 
-
-                                    
-jugadas[4] == "X" and jugadas[5] == "X" -> La compu juega 3
-jugadas[3] == "X" and jugadas[5] == "X" -> La compu juega 4
-jugadas[3] == "X" and jugadas[4] == "X" -> La compu juega 5
+moves[4] == "X" and moves[5] == "X" -> The computer plays 3
+moves[3] == "X" and moves[5] == "X" -> The computer plays 4
+moves[3] == "X" and moves[4] == "X" -> The computer plays 5
 
 -------------   -------------   -------------   
 |   |   |   |   |   |   |   |   |   |   |   |   
@@ -92,13 +88,9 @@ jugadas[3] == "X" and jugadas[4] == "X" -> La compu juega 5
 |   |   |   |   |   |   |   |   |   |   |   |   
 -------------   -------------   -------------  
 
-
-
-
-
-jugadas[7] == "X" and jugadas[8] == "X" -> La compu juega 6                                                                   
-jugadas[6] == "X" and jugadas[8] == "X" -> La compu juega 7                               
-jugadas[6] == "X" and jugadas[7] == "X" -> La compu juega 8
+moves[7] == "X" and moves[8] == "X" -> The computer plays 6
+moves[6] == "X" and moves[8] == "X" -> The computer plays 7
+moves[6] == "X" and moves[7] == "X" -> The computer plays 8
 
 -------------   -------------   -------------   
 |   |   |   |   |   |   |   |   |   |   |   |   
@@ -108,13 +100,16 @@ jugadas[6] == "X" and jugadas[7] == "X" -> La compu juega 8
 |   | 7 | 8 |   | 6 |   | 8 |   | 6 | 7 |   |   
 -------------   -------------   -------------  
 
------------------------------------------------    Fin filas    ------------------------------------------------
+----------------------------------------------- End Rows ------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 
 
----------------------------------------------------   Columnas   -------------------------------------------
-jugadas[3] == "X" and jugadas[6] == "X" -> La compu juega 0                                                                   
-jugadas[0] == "X" and jugadas[6] == "X" -> La compu juega 3                               
-jugadas[0] == "X" and jugadas[3] == "X" -> La compu juega 6
+---------------------------------------------------------------------------------------------------------
+--------------------------------------------------- Columns ---------------------------------------------
+
+moves[3] == "X" and moves[6] == "X" -> The computer plays 0
+moves[0] == "X" and moves[6] == "X" -> The computer plays 3
+moves[0] == "X" and moves[3] == "X" -> The computer plays 6
 
 -------------   -------------   -------------   
 |   |   |   |   | 0 |   |   |   | 0 |   |   |   
@@ -124,12 +119,9 @@ jugadas[0] == "X" and jugadas[3] == "X" -> La compu juega 6
 | 6 |   |   |   | 6 |   |   |   |   |   |   |   
 -------------   -------------   -------------  
 
-                                    
-
-
-jugadas[4] == "X" and jugadas[7] == "X" -> La compu juega 1                                                                   
-jugadas[1] == "X" and jugadas[7] == "X" -> La compu juega 4                               
-jugadas[1] == "X" and jugadas[4] == "X" -> La compu juega 7
+moves[4] == "X" and moves[7] == "X" -> The computer plays 1
+moves[1] == "X" and moves[7] == "X" -> The computer plays 4
+moves[1] == "X" and moves[4] == "X" -> The computer plays 7
 
 -------------   -------------   -------------   
 |   |   |   |   |   | 1 |   |   |   | 1 |   |   
@@ -139,13 +131,9 @@ jugadas[1] == "X" and jugadas[4] == "X" -> La compu juega 7
 |   | 7 |   |   |   | 7 |   |   |   |   |   |   
 -------------   -------------   -------------  
 
-                                    
-
-
-jugadas[5] == "X" and jugadas[8] == "X" -> La compu juega 2                                                                   
-jugadas[2] == "X" and jugadas[8] == "X" -> La compu juega 5                               
-jugadas[2] == "X" and jugadas[5] == "X" -> La compu juega 8
-
+moves[5] == "X" and moves[8] == "X" -> The computer plays 1
+moves[2] == "X" and moves[8] == "X" -> The computer plays 5
+moves[2] == "X" and moves[5] == "X" -> The computer plays 8
 
 -------------   -------------   -------------   
 |   |   |   |   |   |   | 2 |   |   |   | 2 |   
@@ -154,15 +142,19 @@ jugadas[2] == "X" and jugadas[5] == "X" -> La compu juega 8
 -------------   -------------   -------------   
 |   |   | 8 |   |   |   | 8 |   |   |   |   |   
 -------------   -------------   -------------  
+
+
                                     
---------------------------------------------------  Fin columnas   ---------------------------------------------------
+--------------------------------------------------  End columns  ---------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
 
 
----------------------------------------------------   Diagonales   -------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------   Diagonals   --------------------------------------------------
   
-jugadas[4] == "X" and jugadas[8] == "X" -> La compu juega 0                                                                   
-jugadas[0] == "X" and jugadas[8] == "X" -> La compu juega 4                               
-jugadas[0] == "X" and jugadas[4] == "X" -> La compu juega 8
+moves[4] == "X" and moves[8] == "X" -> The computer plays 0                                                                   
+moves[0] == "X" and moves[8] == "X" -> The computer plays 4                               
+moves[0] == "X" and moves[4] == "X" -> The computer plays 8
 
 -------------   -------------   -------------   
 |   |   |   |   | 0 |   |   |   | 0 |   |   |   
@@ -175,9 +167,9 @@ jugadas[0] == "X" and jugadas[4] == "X" -> La compu juega 8
                                     
 
 
-jugadas[6] == "X" and jugadas[4] == "X" -> La compu juega 2                                                                   
-jugadas[6] == "X" and jugadas[2] == "X" -> La compu juega 4                               
-jugadas[2] == "X" and jugadas[4] == "X" -> La compu juega 6
+moves[6] == "X" and moves[4] == "X" -> The computer plays 2                                                                   
+moves[6] == "X" and moves[2] == "X" -> The computer plays 4                               
+moves[2] == "X" and moves[4] == "X" -> The computer plays 6
 -------------   -------------   -------------   
 |   |   |   |   |   |   | 2 |   |   |   | 2 |   
 -------------   -------------   -------------   
@@ -186,5 +178,5 @@ jugadas[2] == "X" and jugadas[4] == "X" -> La compu juega 6
 | 6 |   |   |   | 6 |   |   |   |   |   |   |   
 -------------   -------------   -------------  
                                     
-----------------------------------------------   Fin diagonales   -------------------------------------------------
-
+----------------------------------------------   End Diagonals   ---------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
