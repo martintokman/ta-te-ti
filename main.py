@@ -1,70 +1,70 @@
-from mostrar_tablero import mostrar_tablero
-from jugada_usuario import jugada_usuario
-from valida_ganador import valida_ganador
-from jugada_compu import jugada_compu
+from show_board import show_board
+from player_move import player_move
+from check_winner import check_winner
+from computer_move import computer_move
 import sys, os
 
 
 
-nivel = 2
+level = 2
 
-while True: #abro bucle infinito (reinicio)
+while True: # Create infinite loop (restart)
 
-    lista_jugadas = [1,2,3,4,5,6,7,8,9]
+    moves_list = [1,2,3,4,5,6,7,8,9]
 
     os.system("clear")
 
-    mostrar_tablero(lista_jugadas)
+    show_board(moves_list)
 
-    while True: #abro bucle infinito (juego)
+    while True: # Create ininite loop (game)
         
-        #juega el usuario
-        jugada_usuario(lista_jugadas)
+        # Player move
+        player_move(moves_list)
 
-        #muestro tablero
-        mostrar_tablero(lista_jugadas)
+        # Show board
+        show_board(moves_list)
 
 
-        #valida ganador
-        ganador = valida_ganador(lista_jugadas)
-        if ganador == "usuario" or ganador == "compu" or ganador == "empate":
+        # Check for winner
+        winner = check_winner(moves_list)
+        if winner == "user" or winner == "computer" or winner == "draw":
             break
  
 
-        #jugada compu
-        jugada_compu(lista_jugadas, nivel)
+        # computer move
+        computer_move(moves_list, level)
 
         os.system("clear")
 
-        #muestro tablero
-        mostrar_tablero(lista_jugadas)
+        # Show board
+        show_board(moves_list)
 
-        #valida ganador
-        ganador = valida_ganador(lista_jugadas)
-        if ganador == "usuario" or ganador == "compu" or ganador == "empate":
+        # Check winner
+        winner = check_winner(moves_list)
+        if winner == "user" or winner == "computer" or winner == "draw":
             break
 
 
 
-    #juego terminado, muestro resultado
+    # Game finished, show result
     os.system("clear")
 
-    #muestro tablero
-    mostrar_tablero(lista_jugadas)  
+    # Show board
+    show_board(moves_list)  
 
-    print(f"\nGanador: {ganador}")
+    print(f"\nwinner: {winner}")
 
     while True:
-        volver_a_jugar = input("Volver a jugar?: ")
-        volver_a_jugar = volver_a_jugar.upper()
-        if volver_a_jugar == "S" or volver_a_jugar == "N":
+        play_again = input("Play again? (y/n): ")
+        play_again = play_again.upper()
+        if play_again == "Y" or play_again == "N":
             break
         else:
-            print("Opción no válida, vuelve a intentar.")
+            print("Invalid option, try again.")
             continue
     
-    if volver_a_jugar == "S":
+    if play_again == "Y":
         continue
-    elif volver_a_jugar == "N":
-        print("\nGracias por jugar!. Nos vemos pronto :)")
+    elif play_again == "N":
+        print("\nThanks for playing. See you next time :)\n")
         exit()
